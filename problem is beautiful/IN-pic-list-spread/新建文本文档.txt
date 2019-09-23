@@ -1,0 +1,5 @@
+close设置了绝对定位而这些重叠在了一起
+item每个图片被点击时会放大
+content  设置了display为flex
+
+产生奇妙的变化
