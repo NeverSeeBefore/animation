@@ -1,2 +1,0 @@
-- piv-list-spread  转轴展开图片列表
-- carousel	3D旋转图片
