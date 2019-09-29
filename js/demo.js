@@ -26,8 +26,9 @@ function bindEvent(){
 
             disX = nowX - lastX;
             disY = nowY - lastY;
-            rotX -= disY * 0.1;
-            rotY += disX * 0.1;
+            
+            rotX -= disY * 0.07;
+            rotY += disX * 0.07;
             // console.log(disX,rotY);
             $('.box').css({
                 transform: 'rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)'
@@ -40,8 +41,8 @@ function bindEvent(){
             // console.log(e);
             $('body').off('mousemove');
             timer = setInterval(() => {
-                disX *= 0.98;
-                disY *=0.98;
+                disX *= 0.95;
+                disY *=0.95;
 
                 rotX -= disY * 0.5;
                 rotY += disX * 0.5;
@@ -54,7 +55,7 @@ function bindEvent(){
                 if(Math.abs(disY) < 0.1){
                     disY = 0;
                 }
-                if(!disY && !disY){
+                if(disY == 0 && disY == 0){
                     clearInterval(timer);
                 }
             }, 20);
