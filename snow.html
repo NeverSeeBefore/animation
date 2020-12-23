@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sky {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+
+        .sky .snow,
+        .sky .snow {
+            position: fixed;
+            left: 0;
+            top: -50px;
+            animation: drop ease-in-out infinite;
+        }
+
+        .sky span {
+            display: inline-block;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 6px 6px #fff;
+        }
+
+        @keyframes drop {
+            0% {
+                transform: translateY(-50px);
+                opacity: 1;
+            }
+
+            85% {
+                opacity: .3;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sky">
+        <div class="snow"><img src="./images/snow1.png" alt=""></div>
+        <span class="snow"></span>
+    </div>
+
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        var skySet = [];
+        var timer = null;
+        function init() {
+            var sky = $('.sky');
+            for (var i = 0; i < 80; i++) {
+                var snow = createSnow();
+                sky.append(snow);
+                skySet.push(snow);
+            }
+            var num = 0
+            timer = setInterval(function () {
+                num++
+                num = num % 360;
+                // if(num > 360){
+                //     num = 1;
+                // }
+                skySet.forEach(function (ele, index) {
+                    ele.find('img').css({
+                        'transform': 'rotate(' + (index + num) + 'deg)'
+                    })
+                });
+            }, 16.7);
+        }
+        init()
+
+        function createSnow() {
+            var width = $(window).width();
+
+            var p = Math.random() > 0.5 ? 1 : 2;
+            var snow = p - 1 ? $('<div class="snow"><img src="./images/snow' + p + '.png"></div>') : $('<span class="snow"></span>');
+            snow.css({
+                'left': random(0, width) + 'px',
+                'animation-duration': random(4, 10) + 's',
+                'animation-delay': random(0, 5) + 's'
+            })
+            return snow
+        }
+        function random(l, h) {
+            return l + Math.floor(Math.random() * (h - l));
+        }
+
+    </script>
+
+</body>
+
+</html>
