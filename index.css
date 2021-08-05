@@ -3,18 +3,62 @@ html, body {
     margin: 0;
     width: 100%;
     height: 100%;
+    user-select: none;
+    background-color: black;
+    box-sizing: border-box;
 }
 #main {
     width: 100%;
     height: 100%;
-    background-color: black;
 }
+
+.ball-container {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    transform: rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    transform-origin: center;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+
+    /*  */
+    transform: rotateX(45deg);
+}
+
 .item {
-    background-color: #fff;
+    color: #fff;
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 48px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
+.item:hover {
+    /* border: 1px solid #fff; */
+}
+
+.special {
+    display: none;
+    z-index: 2;
+    border: 1px solid springgreen;
+    /* transform: rotate3d(0, 1, 1, 45deg) translateX(100px) translateY(100px); */
+    /* transform: rotate3d(0, 1, 1, 45deg) translateY(100px) translateX(100px); */
+}
+.stage1 {
+    transform: translate(-50%, -50%) rotateY(45deg);
+}
+.stage2 {
+    transform: translate(-50%, -50%) rotateY(45deg) translateZ(100px);
+}
+.stage3 {
+    transform: rotateY(45deg) translate3d(-50%, -50%, 100px);
 }
