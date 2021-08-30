@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+        .container {
+            width: 0ch;
+            font-size: 20px;
+            line-height: 20px;
+            height: 20px;
+            overflow: hidden;
+            animation: typing 2s steps(20) 1s forwards;
+            white-space: nowrap;
+            position: relative;
+        }
+        .container::after {
+            content: '';
+            display: block;
+            opacity: 1;
+            width: 2px;
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: black;
+            animation: cursor .5s linear infinite alternate-reverse;
+        }
+        @keyframes typing {
+            from {
+                width: 0ch;
+            }
+            to {
+                width: 20ch;
+            }
+        }
+        @keyframes cursor {
+            0%, 40%{
+                opacity: 0;
+            }
+            60%, 100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        margin-right: 100px;
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
