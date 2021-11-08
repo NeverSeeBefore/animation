@@ -1,0 +1,110 @@
+html,
+body {
+  margin: 0;
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+.hidden {
+    display: none;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 500px; */
+  height: 100px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.1);
+  /* background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%); */
+}
+
+.tab {
+  position: relative;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  /* filter: blur(1px); */
+  z-index: 2;
+  transition: .3s ease-in-out;
+}
+
+.tab:hover {
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.tab:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.tab svg {
+  width: 20px;
+  height: 100%;
+  /* color: transparent; */
+  background-color: transparent;
+}
+
+.slide {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    z-index: 0;
+    box-shadow: 0 0 10px 1px transparent;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+#tab1:checked ~ .tab[for="tab1"],
+#tab2:checked ~ .tab[for="tab2"],
+#tab3:checked ~ .tab[for="tab3"],
+#tab4:checked ~ .tab[for="tab4"],
+#tab5:checked ~ .tab[for="tab5"] {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition-delay: .5s;
+}
+
+#tab1:checked ~ .slide {
+    left: calc(10px + 0 *(50px + 10px));
+    opacity: 1;
+    background-color: #fbc2eb;
+    box-shadow: 0 0 10px 1px #fbc2eb;
+}
+
+#tab2:checked ~ .slide {
+    left: calc(10px + 1 *(50px + 10px));
+    opacity: 1;
+    background-color: #00f2fe;
+    box-shadow: 0 0 10px 1px #00f2fe;
+}
+
+#tab3:checked ~ .slide {
+    left: calc(10px + 2 *(50px + 10px));
+    opacity: 1;
+    background-color: #6eedb2;
+    box-shadow: 0 0 10px 1px #6eedb2;
+}
+
+#tab4:checked ~ .slide {
+    left: calc(10px + 3 *(50px + 10px));
+    opacity: 1;
+    background-color: #fa709a;
+    box-shadow: 0 0 10px 1px #fa709a;
+}
+
+#tab5:checked ~ .slide {
+    left: calc(10px + 4 *(50px + 10px));
+    opacity: 1;
+    background-color: #fee140;
+    box-shadow: 0 0 10px 1px #fee140;
+}
