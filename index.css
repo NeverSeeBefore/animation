@@ -1,0 +1,74 @@
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    width: 250px;
+    height: 75px;
+    background-color: black;
+    border-radius: 37.5px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 75px;
+    text-align: center;
+    border: 1px solid;
+    border-color: #fff;
+    background-image: linear-gradient(
+        to right,
+        #03a9f4,
+        #f441a5,
+        #ffeb3b,
+        #09a8f4
+    );
+    background-size: 500%;
+}
+
+.button::before {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    background-color: black;
+    border-radius: 37.5px;
+    color: #fff;
+    font-size: 25px;
+    line-height: 75px;
+    text-align: center;
+    border: 1px solid;
+    border-color: #fff;
+    background-image: linear-gradient(
+        to right,
+        #03a9f4,
+        #f441a5,
+        #ffeb3b,
+        #09a8f4
+    );
+    background-size: 500%;
+    filter: blur(35px);
+}
+
+.button:hover,
+.button:hover::before {
+    animation: run 5s linear 0s infinite reverse;
+}
+
+@keyframes run {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 500% 0%;
+    }
+}
