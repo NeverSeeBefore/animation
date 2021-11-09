@@ -3,3 +3,4 @@
 - snow-down  雪花飘落
 - typing    打字效果
 - nav   半透明导航栏
+- colorful-ring     流光圆环
