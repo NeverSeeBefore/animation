@@ -5,3 +5,4 @@
 - nav   半透明导航栏
 - colorful-ring     流光圆环
 - colorful-button   流光按钮
+- 2024LCCMatchLoading 2024解说杯赛加载页面背景动画
