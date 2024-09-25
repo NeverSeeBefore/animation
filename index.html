@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            overflow: auto;
+        }
+
+        p {
+            font-size: 0;
+        }
+
+        .underline {
+            font-size: 16px;
+            line-height: 25px;
+            background-image: linear-gradient(to right, #ff5f57, #28c840);
+            background-repeat: no-repeat;
+            /* 从左到右消失 */
+            background-position: right bottom;
+            background-size: 0 3px;
+            transition: background-size 0.5s 0.6s, background-position 0.3s 0.3s linear;
+            /* transition: background-size 0.5s 0.3s; */
+        }
+
+        .underline:hover {
+            /* 从左到右出现 */
+            background-position: left bottom;
+            background-size: 100% 3px;
+            transition: background-size 0.5s 0s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h3>
+            useTransition
+        </h3>
+        <p>
+            <span class="underline">useTransition</span> is a React Hook that lets you update the state without blocking
+            the UI.
+        </p>
+        <p>
+            <span class="underline">
+                useTransition is a Hook, so it can only be called inside components or custom Hooks. If you need to
+                start a Transition somewhere else (for example, from a data library), call the standalone
+                startTransition instead.
+            </span>
+        </p>
+        <p class="underline">
+            <span>
+                You can wrap an update into a Transition only if you have access to the set function of that state. If
+                you want to start a Transition in response to some prop or a custom Hook value, try useDeferredValue
+                instead.
+            </span>
+        </p>
+        <p class="underline">
+            <span>
+                The function you pass to startTransition must be synchronous. React immediately executes this function,
+                marking all state updates that happen while it executes as Transitions. If you try to perform more state
+                updates later (for example, in a timeout), they won’t be marked as Transitions.
+            </span>
+        </p>
+        <p class="underline">
+            <span>
+                A state update marked as a Transition will be interrupted by other state updates. For example, if you
+                update a chart component inside a Transition, but then start typing into an input while the chart is in
+                the middle of a re-render, React will restart the rendering work on the chart component after handling
+                the input update.
+            </span>
+        </p>
+        <p class="underline">
+            <span>
+                Transition updates can’t be used to control text inputs.
+            </span>
+        </p>
+        <p class="underline">
+            <span>If there are multiple ongoing Transitions, React currently batches them together. This is a limitation
+                that will likely be removed in a future release.</span>
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
